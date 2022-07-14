@@ -89,7 +89,7 @@ $ composer require hulang/think-filesystem
     'ssl' => true,
     'timeout' => 30,
     'ignorePassiveAddress' => false,
-    'url'       => '',//不要斜杠结尾，此处为URL地址域名。
+    'url' => '',//不要斜杠结尾，此处为URL地址域名。
 ],
 'sftp'=>[
     'host' => 'example.com',
@@ -99,7 +99,7 @@ $ composer require hulang/think-filesystem
     'privateKey' => 'path/to/or/contents/of/privatekey',
     'root' => '/path/to/root',
     'timeout' => 10,
-    'url'       => '',//不要斜杠结尾，此处为URL地址域名。
+    'url' => '',//不要斜杠结尾，此处为URL地址域名。
 ],
 ```
 
