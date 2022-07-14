@@ -112,10 +112,10 @@ MIT
 
 ## 感谢
 
-1.thinkphp
-2.league/flysystem
-3.league/flysystem-ftp
-4.league/flysystem-sftp
-5.overtrue/flysystem-qiniu
-6.overtrue/flysystem-cos
-7.yzh52521/thinkphp-filesystem-cloud
+1. thinkphp
+2. league/flysystem
+3. league/flysystem-ftp
+4. league/flysystem-sftp
+5. overtrue/flysystem-qiniu
+6. overtrue/flysystem-cos
+7. yzh52521/thinkphp-filesystem-cloud
