@@ -12,7 +12,6 @@ use League\Flysystem\AwsS3v3\AwsS3Adapter;
 
 class S3 extends Driver
 {
-
     protected function createAdapter(): AdapterInterface
     {
         $handler = new GuzzleHandler();
