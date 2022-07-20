@@ -10,7 +10,6 @@ use think\filesystem\Driver;
 
 class Local extends Driver
 {
-
     /**
      * 配置参数.
      *
