@@ -10,7 +10,6 @@ use yzh52521\Flysystem\Oss\OssAdapter;
 
 class Aliyun extends Driver
 {
-
     protected function createAdapter(): AdapterInterface
     {
         return new OssAdapter([
