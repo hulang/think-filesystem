@@ -10,13 +10,13 @@ use think\filesystem\Driver;
 
 class Qcloud extends Driver
 {
-
     protected function createAdapter(): AdapterInterface
     {
         $config = [
             'region'          => $this->config['region'],
             'credentials'     => [
-                'appId'     => $this->config['appId'], // 域名中数字部分
+                // 域名中数字部分
+                'appId'     => $this->config['appId'], 
                 'secretId'  => $this->config['secretId'],
                 'secretKey' => $this->config['secretKey'],
             ],
