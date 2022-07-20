@@ -10,7 +10,6 @@ use yzh52521\Flysystem\Obs\ObsAdapter;
 
 class Obs extends Driver
 {
-
     protected function createAdapter(): AdapterInterface
     {
         return new ObsAdapter([
