@@ -27,7 +27,7 @@ composer require hulang/think-filesystem
 
 第二步： 在config/filesystem.php中添加配置
 
-```
+```php
 'aliyun' => [
     'type' => 'aliyun',
     'access_id' => '******',
