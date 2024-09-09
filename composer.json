@@ -3,7 +3,7 @@
     "description": "thinkphp 8.0 for filesystem,include Aliyun and Qiniu COS OBS FTP SFTP ",
     "type": "library",
     "require": {
-        "php": "^8.0.2",
+        "php": "^8.2",
         "topthink/framework": "^8.0",
         "symfony/http-foundation": "^7.0",
         "league/flysystem": "^3.0",
