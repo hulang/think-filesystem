@@ -99,7 +99,8 @@ composer require hulang/think-filesystem
     // 可选的 FTP 设置
     // 'port' => 21,
     // 'root' => '',
-    // 'passive' => true,
+    // 如果提示:php_connect_nonb之类的错位,请尝试设置为false
+    'passive' => false,
     // 'ssl' => true,
     // 'timeout' => 30,
     // 'url'=>''
