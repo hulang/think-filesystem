@@ -19,7 +19,6 @@ class Local extends Driver
         'root' => '',
     ];
 
-
     protected function createAdapter()
     {
         $visibility = PortableVisibilityConverter::fromArray(
