@@ -1,5 +1,5 @@
 <h1><p align="center">think-filesystem</p></h1>
-<p align="center"> thinkphp 8.0.0+ 的文件系统扩展包，支持上传阿里云OSS、七牛、腾讯云COS、华为云OBS、awsS3、FTP、SFTP</p>
+<p align="center"> thinkphp 8.0.0+ 的文件系统扩展包，支持上传阿里云OSS、七牛、腾讯云COS、华为云OBS、awsS3、FTP、SFTP、WEB</p>
 
 #### 包含
 
@@ -16,6 +16,7 @@
 6. google
 7. ftp
 8. sftp
+9. web(自定义扩展)
 
 #### 安装
 
@@ -119,7 +120,18 @@ composer require hulang/think-filesystem
     'root' => '/path/to/root',
     'url' => '/path/to/root',
     'timeout' => 10
-]
+],
+'web' => [
+    'type' => 'web',
+    // 自定义配置
+    'secret_id' => 'd73d84e14cf8cd0c53855c2bea35e95ecf00689b',
+    'secret_key' => '5003aec07e6a2591ef2b9ed5b6e31555ab4bea33',
+    'bucket' => 'bucket',
+    // 请求接口
+    'domain' => 'https://img.你自己的域名.cn/上传接口',
+    // 访问URL
+    'url' => 'https://img.你自己的域名.cn/',
+],
 ```
 
 第三步： 开始使用。 请参考thinkphp文档

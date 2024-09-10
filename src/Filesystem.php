@@ -158,13 +158,13 @@ class Filesystem extends Manager
     public function getDiskConfig($disk, $name = null, $default = null)
     {
         // 尝试获取指定磁盘的配置
-        if ($config = $this->getConfig(sprintf('disks.%s', $disk))) {
+        if ($config = $this->getConfig("disks.{$disk}")) {
             // 使用Arr::get方法获取配置项的值,如果配置项不存在,则返回默认值
             return Arr::get($config, $name, $default);
         }
 
         // 如果未找到磁盘配置,抛出异常
-        throw new InvalidArgumentException(sprintf('Disk [%s] not found.', $disk));
+        throw new InvalidArgumentException("Disk [$disk] not found.");
     }
 
     /**
