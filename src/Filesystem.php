@@ -24,7 +24,7 @@ class Filesystem extends Manager
      * 获取指定名称的磁盘驱动实例
      * 
      * 本方法主要用于通过磁盘名称获取对应的驱动实例如果未指定名称,则返回默认驱动实例
-     * 这对于需要对文件进行操作,而又不关心具体磁盘类型（本地、远程等）的场景非常有用
+     * 这对于需要对文件进行操作,而又不关心具体磁盘类型(本地、远程等)的场景非常有用
      * 
      * @param null|string $name 可选参数,指定要获取的磁盘驱动的名称如果未提供,则返回默认驱动
      * @return Driver 返回请求的磁盘驱动实例
@@ -138,7 +138,6 @@ class Filesystem extends Manager
         if (!is_null($name)) {
             return $this->app->config->get('filesystem.' . $name, $default);
         }
-
         return $this->app->config->get('filesystem');
     }
 
@@ -162,7 +161,6 @@ class Filesystem extends Manager
             // 使用Arr::get方法获取配置项的值,如果配置项不存在,则返回默认值
             return Arr::get($config, $name, $default);
         }
-
         // 如果未找到磁盘配置,抛出异常
         throw new InvalidArgumentException("Disk [$disk] not found.");
     }
@@ -193,7 +191,6 @@ class Filesystem extends Manager
     public function extend($driver, \Closure $callback)
     {
         $this->customCreators[$driver] = $callback;
-
         return $this;
     }
 
