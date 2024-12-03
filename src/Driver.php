@@ -102,7 +102,7 @@ abstract class Driver
         }
 
         // 返回新的Filesystem实例,使用配置好的适配器和部分配置参数
-        // 这些配置参数包括：directory_visibility, disable_asserts, temporary_url, url, visibility
+        // 这些配置参数包括:directory_visibility,disable_asserts,temporary_url,url,visibility
         return new Filesystem($adapter, Arr::only($config, [
             'directory_visibility',
             'disable_asserts',
@@ -290,7 +290,6 @@ abstract class Driver
             fpassthru($stream);
             fclose($stream);
         });
-
         // 返回流式响应对象
         return $response;
     }
@@ -338,7 +337,6 @@ abstract class Driver
         if ($this->filesystem->visibility($path) == Visibility::PUBLIC) {
             return 'public';
         }
-
         // 否则,返回'private'
         return 'private';
     }
@@ -363,7 +361,6 @@ abstract class Driver
             throw_if($this->throwsExceptions(), $e);
             return false;
         }
-
         // 如果没有发生异常,则成功设置可见性,返回true
         return true;
     }
@@ -386,7 +383,6 @@ abstract class Driver
             // 如果文件存在,将新数据添加到文件开头,并保留原内容
             return $this->put($path, $data . $separator . $this->get($path));
         }
-
         // 如果文件不存在,直接写入新数据
         return $this->put($path, $data);
     }
@@ -410,7 +406,6 @@ abstract class Driver
             // 文件存在时,追加数据
             return $this->put($path, $this->get($path) . $separator . $data);
         }
-
         // 文件不存在时,直接写入数据
         return $this->put($path, $data);
     }
@@ -444,7 +439,6 @@ abstract class Driver
                 $success = false;
             }
         }
-
         // 返回删除操作的成功与否
         return $success;
     }
@@ -466,7 +460,6 @@ abstract class Driver
             throw_if($this->throwsExceptions(), $e);
             return false;
         }
-
         return true;
     }
 
@@ -511,16 +504,16 @@ abstract class Driver
      * 获取指定路径文件的MIME类型
      * 
      * 本函数尝试获取指定路径文件的MIME类型,如果无法获取,则根据配置决定是否抛出异常
-     * MIME类型是表示文件格式的一种标准,例如：文本文件的MIME类型为"text/plain",图片文件可能有"image/jpeg"、"image/png"等MIME类型
+     * MIME类型是表示文件格式的一种标准,例如:文本文件的MIME类型为"text/plain",图片文件可能有"image/jpeg"、"image/png"等MIME类型
      * 
      * @param string $path 文件路径,可以是本地路径或者网络路径,具体取决于文件系统实现
      * @return mixed|string|bool 成功时返回文件的MIME类型字符串,失败时返回false
      * 
-     * 使用场景包括但不限于：
+     * 使用场景包括但不限于
      * - 需要根据文件类型执行不同操作时
      * - 验证上传文件类型是否符合预期时
      * 
-     * 注意：当无法获取到MIME类型且配置为抛出异常模式时,会抛出UnableToRetrieveMetadata异常
+     * 注意:当无法获取到MIME类型且配置为抛出异常模式时,会抛出UnableToRetrieveMetadata异常
      */
     public function mimeType($path)
     {
@@ -590,7 +583,7 @@ abstract class Driver
      * @throws UnableToWriteFile 当写入操作因为文件系统权限或资源问题失败时抛出
      * @throws UnableToSetVisibility 当写入文件后尝试设置文件访问权限失败时抛出
      *
-     * 注意：该方法内部处理所有潜在的文件写入和权限设置异常,确保在发生错误时能够优雅地回退或处理
+     * 注意:该方法内部处理所有潜在的文件写入和权限设置异常,确保在发生错误时能够优雅地回退或处理
      */
     public function writeStream($path, $resource, array $options = [])
     {
@@ -603,7 +596,6 @@ abstract class Driver
             // 如果不抛出异常,则返回false表示操作失败
             return false;
         }
-
         // 如果没有异常发生,表示操作成功,返回true
         return true;
     }
@@ -635,7 +627,7 @@ abstract class Driver
     /**
      * 根据指定路径获取资源的URL
      *
-     * 本方法尝试按照以下顺序获取URL：
+     * 本方法尝试按照以下顺序获取URL
      * 1. 如果适配器对象($adapter)具有getUrl方法,则调用该方法
      * 2. 如果文件系统对象($filesystem)具有getUrl方法,则调用该方法
      * 3. 如果适配器是SftpAdapter或FtpAdapter的实例,则调用内部的getFtpUrl方法
@@ -835,7 +827,6 @@ abstract class Driver
             throw_if($this->throwsExceptions(), $e);
             return false;
         }
-
         return true;
     }
 
@@ -940,7 +931,6 @@ abstract class Driver
             throw_if($this->throwsExceptions(), $e);
             return false;
         }
-
         // 目录创建成功或异常被捕获后返回true
         return true;
     }
@@ -966,7 +956,6 @@ abstract class Driver
             // 如果不抛出异常,则返回false表示删除失败
             return false;
         }
-
         // 目录删除成功,返回true
         return true;
     }
